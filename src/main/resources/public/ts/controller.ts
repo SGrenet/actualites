@@ -383,6 +383,14 @@ export const actualiteController = ng.controller('ActualitesController',
                 };
             };
 
+            $scope.getInfoDate = function(info){
+                if (info.publication_date !== undefined && info.publication_date !== null && typeof info.publication_date === 'string') {
+                    return $scope.formatDate(info.publication_date);
+                } else {
+                    return $scope.formatDateLocale(info.modified);
+                }
+            };
+
             $scope.getInfosThreadsSelected = function () {
                 if (model.threads.selection().length > 0) {
                     var nb = 0;
