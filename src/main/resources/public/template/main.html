@@ -79,7 +79,7 @@
                        class="horizontal-spacing">
                         <span><i18n>filters.headline</i18n></span>
                     </a>
-                    <span ng-if="displayedInfos.headlines.length === 0"><i18n>filters.headline</i18n></span>
+                    <span class="horizontal-spacing" ng-if="displayedInfos.headlines.length === 0"><i18n>filters.headline</i18n></span>
                 </header>
                 <header ng-class="{'selected' : findParam('filter') === ACTUALITES_CONFIGURATION.infoFilter.DRAFT,
                         'disabled' : displayedInfos.drafts.length === 0}"
@@ -89,7 +89,7 @@
                        class="horizontal-spacing">
                         <span><i18n>filters.drafts</i18n></span>
                     </a>
-                    <span ng-if="displayedInfos.drafts.length === 0"><i18n>filters.drafts</i18n></span>
+                    <span class="horizontal-spacing" ng-if="displayedInfos.drafts.length === 0"><i18n>filters.drafts</i18n></span>
                 </header>
                 <header ng-class="{'selected' : findParam('filter') === ACTUALITES_CONFIGURATION.infoFilter.PENDING,
                             'disabled': displayedInfos.pendings.length === 0}"
@@ -102,7 +102,7 @@
                             <i class="badge">[[displayedInfos.pendings.length]]</i>
                         </span>
                     </a>
-                    <span ng-if="displayedInfos.pendings.length === 0"><i18n>filters.submitted.waiting</i18n></span>
+                    <span class="horizontal-spacing" ng-if="displayedInfos.pendings.length === 0"><i18n>filters.submitted.waiting</i18n></span>
                 </header>
             </div>
         </div>
