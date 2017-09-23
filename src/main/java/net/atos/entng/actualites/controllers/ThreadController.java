@@ -154,7 +154,7 @@ public class ThreadController extends ControllerHelper {
 			@Override
 			public void handle(final UserInfos user) {
 				if (user != null) {
-					shareService.shareInfos(user.getUserId(), id, I18n.acceptLanguage(request), new Handler<Either<String, JsonObject>>() {
+					shareService.shareInfos(user.getUserId(), id, I18n.acceptLanguage(request), request.params().get("search"), new Handler<Either<String, JsonObject>>() {
 						@Override
 						public void handle(Either<String, JsonObject> event) {
 							final Handler<Either<String, JsonObject>> handler = defaultResponseHandler(request);
