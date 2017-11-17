@@ -220,6 +220,10 @@ export const actualiteController = ng.controller('ActualitesController',
 
             $scope.createInfo = function(){
                 $scope.currentInfo = new Info();
+                if ($scope.currentThread !== undefined
+                    && !_.isEmpty($scope.currentThread)) {
+                    $scope.currentInfo.thread = $scope.currentThread;
+                }
                 template.open('createInfo', 'info-create');
             };
 
@@ -515,6 +519,18 @@ export const actualiteController = ng.controller('ActualitesController',
             $scope.goBackToTimeline = function () {
                 $scope.infoTimeline.events.deselectAll();
                 template.open('main', 'info-timeline');
+            };
+
+            /**
+             * When selecting a thread, change the currentThread and
+             * the currentInfo.thread to the one selected
+             * @param thread selected
+             */
+            $scope.switchSelectThread = function (thread) {
+              if (thread !== undefined) {
+                  $scope.currentThread = thread;
+                  $scope.currentInfo.thread = thread;
+              }
             };
 
             function findSequence(x, y){
