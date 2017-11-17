@@ -24,7 +24,7 @@
         <nav class="vertical half-stamps mobile-navigation" side-nav>
             <div>
                 <a href="#/default">
-                    <article ng-click="switchSselectThread(thread)"
+                    <article ng-click="switchSelectThread(thread)"
                              ng-class="{ selected: $location.path() === '/default'
                         || $location.path().indexOf('/default') !== -1 }">
                         <div></div>
@@ -36,7 +36,7 @@
             </div>
             <div ng-repeat="thread in threads.all">
                 <a href="#/view/thread/[[thread._id]]">
-                    <article ng-click="switchSselectThread(thread)"
+                    <article ng-click="switchSelectThread(thread)"
                              ng-class="{ selected: $location.path() === '/view/thread/' + thread._id}">
                         <div>
                             <img skin-src="/img/illustrations/actualites-default.png" ng-if="!thread.icon" />
