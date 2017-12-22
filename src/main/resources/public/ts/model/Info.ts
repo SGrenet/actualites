@@ -24,6 +24,8 @@ export class Info extends Model {
     thread_id: number;
     myRights: any;
     tmpComments: any;
+    edit: boolean;
+    expanded: boolean;
 
     constructor (data?) {
         super();

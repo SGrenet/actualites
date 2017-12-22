@@ -218,6 +218,11 @@ export const actualiteController = ng.controller('ActualitesController',
                 info.expanded = true;
             };
 
+            $scope.cancelEditInfo = function (info: Info) {
+                info.edit = false;
+                info.expanded = false;
+            };
+
             $scope.createInfo = function(){
                 $scope.currentInfo = new Info();
                 if ($scope.currentThread !== undefined
