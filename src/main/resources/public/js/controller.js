@@ -304,7 +304,7 @@ function ActualitesController($scope, template, route, model, date, $location){
                 // label (A venir)
                 return 'actualites.edition.status.4' ;
             }
-            if (info.hasExpirationDate && moment().isAfter(getDateAsMoment(info.expiration_date).startOf('days')) ){
+            if (info.hasExpirationDate && moment().add(1, 'days').startOf('days').isAfter(getDateAsMoment(info.expiration_date)) ){
                 // label (Expiree)
                 return  'actualites.edition.status.5' ;
             }
